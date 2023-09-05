@@ -246,17 +246,17 @@ cmd({
             let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
-_This is  ${tlang().title}._
+_This is PRAVEEN BOT V1
 ${alivemessage}
 
-*Version:-* _0.0.7_
+*Version:-* _1.0.0_
 *Uptime:-* _${runtime(process.uptime())}_
 *Owner:-* _${Config.ownername}_
 *Branch:-* _${Config.BRANCH}_
 
 _Type ${prefix}menu for my command list._
 
-_Powered by ${Config.ownername}_
+_Powered by PRAVEEN
 `;
             let aliveMessage = {
                 image: {
