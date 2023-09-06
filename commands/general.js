@@ -107,16 +107,21 @@ Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
 
 //---------------------------------------------------------------------------
 cmd({
-        pattern: "git",
+        pattern: "repo",
         alias: ["git", "sc", "script"],
-        desc: "https://github.com/praveennimsaragiz/pnr",
+        desc: "Sends info about repo.",
         category: "general",
         filename: __filename,
     },
     async(Void, citel) => {
         let { data } = await axios.get('https://api.github.com/repos/SamPandey001/Secktor-Md')
         let cap = `Hey ${citel.pushName}\n
-*git*https://github.com/praveennimsaragiz/pnr
+*⭐ Total Stars:* ${data.stargazers_count} stars
+*🍽️ Forks:* ${data.forks_count} forks
+*🍁 Repo:* https://github.com/praveennimsaragiz/pnr
+*Group:* https://chat.whatsapp.com/GNycjpi78fp1ZOxRHLfgTC
+*Deploy Your Own:*-
+https://github.com/praveennimsaragiz/pnr`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
