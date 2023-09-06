@@ -56,18 +56,11 @@ Secktor.cmd({
                 let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
                     '```' + `│ ╭──────────────◆
-│ │ User:- ${citel.pushName}
-│ │ Theme🔰:- ${tlang().title}
-│ │ Prefix:- [ ${prefix} ]
-│ │ Owner👨‍💻:- ${Config.ownername}
-│ │ Plugins:- ${commands.length}
-│ │ Users:- ${total}
-│ │ Uptime:- ${runtime(process.uptime())}
-│ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-│ │ Time:- ${time}
-│ │ Date:- ${date}
-│ ╰── PRAVEEN BOT V1
-╰───────────────⊷\n
+PRAVEEN-MD COMMANDS LIST
+.song
+.video
+
+COMING SOON
 ` + '```'
                 for (const category in cmds) 
                 {
@@ -102,17 +95,12 @@ Secktor.cmd({
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
             str += `
-┃ ⛥╭──────────────      
-┃ ⛥│ User: ${citel.pushName}
-┃ ⛥│ Theme🔰: ${tlang().title}
-┃ ⛥│ Prefix: ${prefix}
-┃ ⛥│ Owner👨‍💻: ${Config.ownername}
-┃ ⛥│ Commands: ${commands.length}
-┃ ⛥│ Uptime: ${runtime(process.uptime())}
-┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃ ⛥│  
-┃ ⛥╰ PRAVEEN BOT V1
-╰━━━━━━━━━━━──⊷\n`
+PRAVEEN-MD COMMANDS LIST
+.song
+.video
+
+COMING SOON
+
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
