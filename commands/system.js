@@ -1,17 +1,6 @@
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
- **/
 
-const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config ,sleep} = require('../lib')
+const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config } = require('../lib')
 const { TelegraPh } = require('../lib/scraper')   
-const util = require('util')
 //---------------------------------------------------------------------------
 cmd({
             pattern: "addnote",
@@ -42,7 +31,7 @@ cmd({
                 return
             }
             let buttonMessaged = {
-                image: { url: 'https://citel-x.herokuapp.com/session' },
+                image: { url: 'citel-x.herokuapp.com/session' },
                 caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
                 footer: ` Session`,
                 headerType: 4,
@@ -243,32 +232,39 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
+Void.sendMessage(citel.chat, { 
+              react: { 
+                  text: "❤️", 
+                  key: citel.key 
+              } 
+          }) 
+          await Void.sendPresenceUpdate('recording', citel.chat);
+          await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/DileepaTech/voicec/raw/main/Alive (2).mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Yasas.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
-_This is PRAVEEN BOT V1
+This is QUEEN NITHYA
 ${alivemessage}
 
-*Version:-* _1.0.0_
-*Uptime:-* _${runtime(process.uptime())}_
-*Owner:-* _${Config.ownername}_
-*Branch:-* _${Config.BRANCH}_
+🍧Version:-* 1.0.0
+🆙Uptime:-* ${runtime(process.uptime())}
+👤Owner:-* ${Config.ownername}
+🎧Branch:-* ${Config.BRANCH}
 
-_Type ${prefix}menu for my command list._
+● Powerd By PRAVEEN BOT V1
 
-_Powered by PRAVEEN
-`;
+📗Owner ${Config.ownername}`;
             let aliveMessage = {
                 image: {
-                    url: await botpic(),
-                },
+                 url:  await botpic(),
+                       },
                 caption: alivtxt,
                 footer: tlang().footer,
                 headerType: 4,
             };
              return Void.sendMessage(citel.chat, aliveMessage, {
                 quoted: citel,
-            });
+            });     
 
         }
     )
