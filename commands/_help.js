@@ -56,11 +56,18 @@ Secktor.cmd({
                 let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
                     '```' + `│ ╭──────────────◆
-PRAVEEN-MD COMMANDS LIST
-.song
-.video
-
-COMING SOON
+│ │👨‍🔧 User:- ${citel.pushName}
+│ │🎈 Theme:- ${tlang().title}
+│ │ 🛜Prefix:- [ ${prefix} ]
+│ │ 👨‍💻Owner:- ${Config.ownername}
+│ │ 🔖Plugins:- ${commands.length}
+│ │ 👨‍🔧Users:- ${total}
+│ │ ⏱️Uptime:- ${runtime(process.uptime())}
+│ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+│ │ ⌚Time:- ${time}
+│ │📅 Date:- ${date}
+│ ╰──────────────◆
+╰───────────────⊷\n
 ` + '```'
                 for (const category in cmds) 
                 {
@@ -75,7 +82,7 @@ COMING SOON
                    }
   
                 }
-                str+= `*⭐️Type:* _${prefix}help cmd_ name to know more about specific command.\n*Eg:* _${prefix}help attp_\n*PRAVEEN* `
+                str+= `*⭐️Type:* _${prefix}help cmd_ name to know more about specific command.\n*Eg:* _${prefix}help attp_\n*Made with ❤️ in Nodejs* `
                 let buttonMessaged = {
                     image: { url: await botpic() },
                     caption: str
@@ -95,12 +102,17 @@ Secktor.cmd({
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
             str += `
-PRAVEEN-MD COMMANDS LIST
-.song
-.video
-
-COMING SOON
-
+┃ ⛥╭──────────────      
+┃ ⛥│👨‍🔧 User: ${citel.pushName}
+┃ ⛥│ 🎈Theme: ${tlang().title}
+┃ ⛥│🛜 Prefix: ${prefix}
+┃ ⛥│ 👨‍💻Owner: ${Config.ownername}
+┃ ⛥│ Commands: ${commands.length}
+┃ ⛥│⏱️ Uptime: ${runtime(process.uptime())}
+┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃ ⛥│  
+┃ ⛥╰───────────
+╰━━━━━━━━━━━──⊷\n`
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
@@ -116,7 +128,7 @@ Secktor.cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
-        react: "👨‍💻",
+        react: "💜",
         filename: __filename
     },
     async(Void, citel) => {
@@ -153,7 +165,7 @@ Secktor.cmd({
     pattern: "file",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
-    react: "✨",
+    react: "🅿",
     filename: __filename
 },
 async(Void, citel, text) => {
