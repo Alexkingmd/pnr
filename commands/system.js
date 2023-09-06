@@ -249,10 +249,10 @@ cmd({
 _This is  ${tlang().title}._
 ${alivemessage}
 
-*Version:-* _1.0.0_
-*Uptime:-* _${runtime(process.uptime())}_
-*Owner:-* _${Config.ownername}_
-*Branch:-* _${Config.BRANCH}_
+*🧬Version:-* _1.0.0_
+*⏱️Uptime:-* _${runtime(process.uptime())}_
+*👤Owner:-* _${Config.ownername}_
+*🎧Branch:-* _${Config.BRANCH}_
 
 _Type ${prefix}menu for my command list._
 
